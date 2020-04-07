@@ -10,6 +10,7 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_TO_CART:
       const product = action.product;
+      const image = product.imageUrl;
       const price = product.price;
       const title = product.title;
       let cartItem;
@@ -20,10 +21,11 @@ export default (state = initialState, action) => {
           state.items[product.id].quantity + 1,
           price,
           title,
-          state.items[product.id].sum + price
+          state.items[product.id].sum + price,
+          image
         );
       } else {
-        cartItem = new CartItem(1, price, title, price);
+        cartItem = new CartItem(1, price, title, price, image);
       }
       // console.log({ [product.id]: cartItem });
       return {
