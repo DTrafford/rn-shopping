@@ -27,12 +27,38 @@ export default (state = initialState, action) => {
       } else {
         cartItem = new CartItem(1, price, title, price, image);
       }
-      // console.log({ [product.id]: cartItem });
       return {
         ...state,
         items: { ...state.items, [product.id]: cartItem },
         total: state.total + price,
       };
+
+    case actionTypes.REMOVE_FROM_CART:
+      const selectedItem = state.items[action.pid];
+      const currentQty = selectedItem.quantity;
+      let updatedCartItems = { ...state.items };
+      const updatedSum = (selectedItem.sum = selectedItem.price);
+
+      if (currentQty > 1) {
+        const updatedCartItem = new CartItem(
+          selectedItem.quantity - 1,
+          selectedItem.price,
+          selectedItem.title,
+          updatedSum,
+          selectedItem.image
+        );
+        updatedCartItems = { ...state.items, [action.pid]: updatedCartItem };
+      } else {
+        updatedCartItems = { ...state.items };
+        delete updatedCartItems[action.pid];
+      }
+      return {
+        ...state,
+        items: updatedCartItems,
+        total: state.total - selectedItem.price,
+      };
+
+    default:
+      return state;
   }
-  return state;
 };

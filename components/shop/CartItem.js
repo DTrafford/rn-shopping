@@ -15,16 +15,20 @@ const CartItem = (props) => {
       <View style={styles.itemData}>
         <View style={styles.imageContainer}>
           <Image
-            source={{ uri: props.item.productImage }}
+            source={{ uri: props.item.imageUrl }}
             style={styles.thumbnail}
           />
         </View>
-        <Text style={styles.title}>{props.item.productTitle}</Text>
+        <Text style={styles.title}>
+          {props.item.title.length < 15
+            ? props.item.title
+            : props.item.title.substring(0, 15).concat("...")}
+        </Text>
         <Text style={styles.details}>
           {props.item.quantity}
           {" x "}
         </Text>
-        <Text style={styles.details}>{props.item.productPrice}</Text>
+        <Text style={styles.details}>{props.item.price}</Text>
       </View>
       <View style={styles.itemData}>
         <Text style={styles.amount}>{props.item.sum}</Text>
@@ -66,13 +70,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   imageContainer: {
-    height: "90%",
-    width: "20%",
+    height: "100%",
+    width: "10%",
     marginRight: 5,
   },
   thumbnail: {
     height: "100%",
-    width: "100%",
+    width: "90%",
     resizeMode: "contain",
   },
   details: {
