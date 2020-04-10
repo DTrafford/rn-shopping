@@ -1,20 +1,20 @@
 Arguments: 
-  /usr/local/Cellar/node/13.11.0/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add --dev redux-dev-tools
+  /usr/local/Cellar/node/13.12.0/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js add moment.js
 
 PATH: 
-  /usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/MacGPG2/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin
 
 Yarn version: 
   1.22.4
 
 Node version: 
-  13.11.0
+  13.12.0
 
 Platform: 
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/redux-dev-tools: Not found
+  Error: https://registry.yarnpkg.com/moment.js: Not found
       at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:66987:18)
       at Request.self.callback (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:140748:22)
       at Request.emit (events.js:315:20)
@@ -58,7 +58,8 @@ npm manifest:
     },
     "devDependencies": {
       "@babel/core": "^7.8.6",
-      "babel-preset-expo": "~8.1.0"
+      "babel-preset-expo": "~8.1.0",
+      "redux-devtools-extension": "^2.13.8"
     },
     "private": true
   }
@@ -4569,6 +4570,11 @@ Lockfile:
       safe-buffer "~5.1.1"
       string_decoder "~1.1.1"
       util-deprecate "~1.0.1"
+  
+  redux-devtools-extension@^2.13.8:
+    version "2.13.8"
+    resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.8.tgz#37b982688626e5e4993ff87220c9bbb7cd2d96e1"
+    integrity sha512-8qlpooP2QqPtZHQZRhx3x3OP5skEV1py/zUdMY28WNAocbafxdG2tRD1MWE7sp8obGMNYuLWanhhQ7EQvT1FBg==
   
   redux@^4.0.5:
     version "4.0.5"

@@ -32,13 +32,18 @@ const CartItem = (props) => {
       </View>
       <View style={styles.itemData}>
         <Text style={styles.amount}>{props.item.sum}</Text>
-        <TouchableOpacity onPress={props.onRemove} style={styles.deleteButton}>
-          <Ionicons
-            name={Platform.OS === "android" ? "md-trash" : "ios-trash"}
-            color="red"
-            size={23}
-          />
-        </TouchableOpacity>
+        {!props.viewOnly ? (
+          <TouchableOpacity
+            onPress={props.onRemove}
+            style={styles.deleteButton}
+          >
+            <Ionicons
+              name={Platform.OS === "android" ? "md-trash" : "ios-trash"}
+              color="red"
+              size={23}
+            />
+          </TouchableOpacity>
+        ) : null}
       </View>
     </View>
   );
