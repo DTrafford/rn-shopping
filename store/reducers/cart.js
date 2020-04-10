@@ -57,7 +57,10 @@ export default (state = initialState, action) => {
       return {
         ...state,
         items: updatedCartItems,
-        total: state.total - selectedItem.price,
+        total:
+          state.total - selectedItem.price > 0
+            ? state.total - selectedItem.price
+            : 0,
       };
     case actionTypes.CLEAR_CART:
       return initialState;
@@ -74,7 +77,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         items: updatedItems,
-        totalAmount: state.totalAmount - itemTotal,
+        total: state.total - itemTotal > 0 ? state.total - itemTotal : 0,
       };
 
     default:

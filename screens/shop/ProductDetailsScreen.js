@@ -62,23 +62,12 @@ export default ProductDetailsScreen;
 const styles = StyleSheet.create({
   product: {
     flex: 1,
-    // shadowColor: "black",
-    // shadowOpacity: 0.26,
-    // shadowOffset: { width: 0, height: 2 },
-    // shadowRadius: 8,
-    // elevation: 5,
-    // borderRadius: 10,
-    // backgroundColor: "white",
     height: 800,
     marginBottom: 20,
-    // overflow: "hidden",
   },
   imageContainer: {
     width: "100%",
     height: "50%",
-    // borderTopLeftRadius: 10,
-    // borderTopRightRadius: 10,
-    // overflow: "hidden",
   },
   image: {
     width: "100%",
@@ -99,7 +88,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 10,
     fontFamily: "open-sans-bold",
-    // color: "#888",
   },
   description: {
     fontSize: 18,

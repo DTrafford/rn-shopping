@@ -8,10 +8,11 @@ import {
   Platform,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import Card from "../../components/UI/Card";
 
 const CartItem = (props) => {
   return (
-    <View style={styles.cartItem}>
+    <Card style={styles.cartItem}>
       <View style={styles.itemData}>
         <View style={styles.imageContainer}>
           <Image
@@ -20,9 +21,9 @@ const CartItem = (props) => {
           />
         </View>
         <Text style={styles.title}>
-          {props.item.title.length < 15
+          {props.item.title.length < 9
             ? props.item.title
-            : props.item.title.substring(0, 15).concat("...")}
+            : props.item.title.substring(0, 8).concat("...")}
         </Text>
         <Text style={styles.details}>
           {props.item.quantity}
@@ -45,7 +46,7 @@ const CartItem = (props) => {
           </TouchableOpacity>
         ) : null}
       </View>
-    </View>
+    </Card>
   );
 };
 
@@ -59,13 +60,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginVertical: 5,
-    shadowColor: "black",
-    shadowOpacity: 0.26,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 8,
-    elevation: 5,
-    borderRadius: 10,
-    backgroundColor: "white",
+    borderRadius: 8,
     overflow: "hidden",
     padding: 10,
     height: 80,
@@ -76,7 +71,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     height: "100%",
-    width: "10%",
+    width: "30%",
     marginRight: 5,
   },
   thumbnail: {
@@ -88,7 +83,7 @@ const styles = StyleSheet.create({
     fontFamily: "open-sans",
     color: "#454545",
     fontSize: 16,
-    marginRight: 5,
+    marginRight: 3,
   },
   title: {
     fontFamily: "open-sans-bold",
